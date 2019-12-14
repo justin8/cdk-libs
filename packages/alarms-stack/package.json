@@ -1,8 +1,29 @@
 {
   "name": "@justin8-cdk/alarms-stack",
   "version": "1.0.1",
+  "description": "> TODO: description",
+  "author": "Justin Dray <justin@dray.be>",
+  "homepage": "https://github.com/justin8/cdk-libs#readme",
+  "license": "ISC",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin8/cdk-libs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justin8/cdk-libs/issues"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -22,5 +43,6 @@
   "dependencies": {
     "@aws-cdk/aws-sns": "^1.18.0",
     "@aws-cdk/core": "^1.18.0"
-  }
+  },
+  "gitHead": "d22144811afb4b3fc37908a7f071b9e84172af01"
 }
