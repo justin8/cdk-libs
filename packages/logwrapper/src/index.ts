@@ -1,4 +1,3 @@
-import cdk = require("@aws-cdk/core");
 import { IFilterPattern, LogGroup, MetricFilter } from "@aws-cdk/aws-logs";
 import { Construct, Duration } from "@aws-cdk/core";
 import {
@@ -37,7 +36,7 @@ export class LogGroupWrapper extends Construct {
       logGroupName: props.logGroupName
     });
 
-    const filter = new MetricFilter(this, `${name}Errors`, {
+    new MetricFilter(this, `${name}Errors`, {
       filterPattern: props.filterPattern,
       logGroup: logGroup,
       metricValue: "1",
