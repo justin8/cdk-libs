@@ -1,12 +1,15 @@
 {
   "name": "@justin8-cdk/logwrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
   "license": "ISC",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -44,5 +47,5 @@
     "@aws-cdk/aws-sqs": "^1.18.0",
     "@aws-cdk/core": "^1.18.0"
   },
-  "gitHead": "5f4bf0f9a8458c815ef5db6f175028ae1d7128ab"
+  "gitHead": "08d77a1d73d0d64a5525079fd74adf7a37380879"
 }
