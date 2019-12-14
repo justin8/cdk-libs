@@ -1,6 +1,6 @@
 {
-  "name": "cdk-logwrapper",
-  "version": "0.1.0",
+  "name": "@justin8-cdk/logwrapper",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
@@ -43,5 +43,6 @@
     "@aws-cdk/aws-sns-subscriptions": "^1.18.0",
     "@aws-cdk/aws-sqs": "^1.18.0",
     "@aws-cdk/core": "^1.18.0"
-  }
+  },
+  "gitHead": "5f4bf0f9a8458c815ef5db6f175028ae1d7128ab"
 }
