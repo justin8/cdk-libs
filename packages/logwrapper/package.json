@@ -44,8 +44,7 @@
   "dependencies": {
     "@aws-cdk/aws-cloudwatch": "^1.18.0",
     "@aws-cdk/aws-logs": "^1.18.0",
-    "@aws-cdk/core": "^1.18.0",
-    "@types/mocha": "^5.2.7"
+    "@aws-cdk/core": "^1.18.0"
   },
   "gitHead": "08d77a1d73d0d64a5525079fd74adf7a37380879"
 }

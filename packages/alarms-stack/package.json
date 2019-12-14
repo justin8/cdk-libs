@@ -44,5 +44,5 @@
     "@aws-cdk/aws-sns": "^1.18.0",
     "@aws-cdk/core": "^1.18.0"
   },
-  "gitHead": "d22144811afb4b3fc37908a7f071b9e84172af01"
+  "gitHead": "b39f707857ceeadd4ac2768d30fc65ef2d14e7e6"
 }
