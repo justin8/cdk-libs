@@ -28,23 +28,28 @@
     "tsc": "tsc",
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest"
+    "test": "tsc && jest",
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && npm run build"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.18.0",
-    "@types/jest": "^24.0.23",
+    "@aws-cdk/assert": "^1.19.0",
+    "@types/jest": "^24.0.24",
     "@types/node": "10.17.5",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
-    "typescript": "~3.7.2"
+    "typescript": "^3.7.4"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "^1.18.0"
+    "@aws-cdk/core": "^1.19.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudwatch": "^1.18.0",
-    "@aws-cdk/aws-logs": "^1.18.0",
-    "@aws-cdk/core": "^1.18.0"
+    "@aws-cdk/aws-cloudwatch": "^1.19.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.19.0",
+    "@aws-cdk/aws-logs": "^1.19.0",
+    "@aws-cdk/aws-sns": "^1.19.0",
+    "@aws-cdk/core": "^1.19.0"
   },
   "gitHead": "08d77a1d73d0d64a5525079fd74adf7a37380879"
 }
