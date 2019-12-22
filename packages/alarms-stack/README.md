@@ -1,12 +1,19 @@
-# Welcome to your CDK TypeScript Construct Library project!
+# CDK Alarms Stack
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`AlarmsStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This is a very short and simple wrapper to create an SNS topic and subscribe a list of email addresses to the topic. It is just a shorter and more readable form to insert in to a CDK app for use with CloudWatch alarms
 
-The construct defines an interface (`AlarmsStackProps`) to configure the visibility timeout of the queue.
+# Usage
 
-## Useful commands
+```
+  const app = new cdk.App();
+  const stack = new alarmsStack(app, "TestStack", {
+      alarmEmails: ["me@example.com", "someoneElse@foo.xyz"],
+      alarmsTopicName: "someTopic"
+  });
+```
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
+The above will generate:
+
+- An SNS topic named "someTopic"
+- 2 email subscriptions, one for each of the given emails
+- The alarm topic is accessible at `stack.alarmsTopic`
