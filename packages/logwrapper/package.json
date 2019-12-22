@@ -4,7 +4,7 @@
   "description": "This module wraps basic settings for a CloudWatch log group; such as alarming on no logs or error messages in logs, along with subscribing to SNS topics for alarming",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {
@@ -51,5 +51,5 @@
     "@aws-cdk/aws-sns": "^1.19.0",
     "@aws-cdk/core": "^1.19.0"
   },
-  "gitHead": "08d77a1d73d0d64a5525079fd74adf7a37380879"
+  "gitHead": "385225e0e6c067aac4b4a8042f76a53d5c05926a"
 }

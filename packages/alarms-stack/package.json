@@ -4,7 +4,7 @@
   "description": "This is a module to set up a very minimal SNS topic and subscribe a list of email addresses to receive alarms",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {
@@ -44,5 +44,5 @@
     "@aws-cdk/aws-sns": "^1.18.0",
     "@aws-cdk/core": "^1.18.0"
   },
-  "gitHead": "b39f707857ceeadd4ac2768d30fc65ef2d14e7e6"
+  "gitHead": "385225e0e6c067aac4b4a8042f76a53d5c05926a"
 }
