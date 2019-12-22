@@ -27,7 +27,10 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "tsc && jest"
+    "test": "tsc && jest",
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && npm run build"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.18.0",
