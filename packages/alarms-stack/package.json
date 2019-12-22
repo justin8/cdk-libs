@@ -1,7 +1,7 @@
 {
   "name": "@justin8-cdk/alarms-stack",
   "version": "1.1.0",
-  "description": "> TODO: description",
+  "description": "This is a module to set up a very minimal SNS topic and subscribe a list of email addresses to receive alarms",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
   "license": "ISC",

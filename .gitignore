@@ -99,3 +99,5 @@ public/
 
 # Lerna
 packages/*/lib
+
+.vscode/symbols.json
