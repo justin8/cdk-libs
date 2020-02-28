@@ -58,7 +58,7 @@ test("Distribution config is correct", () => {
   );
 });
 
-// deployment funciton
+// deployment function
 test("Deployment is not run by default", () => {
   expectCDK(basicStack).notTo(haveResourceLike("Custom::CDKBucketDeployment"));
 });

@@ -21,6 +21,7 @@ Object {
     "MyTestConstructMyTestConstructDistCFDistribution7D12A8F4": Object {
       "Properties": Object {
         "DistributionConfig": Object {
+          "Aliases": Array [],
           "DefaultCacheBehavior": Object {
             "AllowedMethods": Array [
               "GET",
