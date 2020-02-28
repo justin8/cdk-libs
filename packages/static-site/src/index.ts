@@ -13,6 +13,7 @@ export interface StaticSiteProps {
   source?: {
     path: string;
   };
+  bucketProps?: {};
   //   domainName: string;
   //   siteSubDomain: string;
 }
@@ -22,7 +23,7 @@ export class StaticSite extends Construct {
     super(parent, name);
     console.log(props); // Dummy call to allow props while they're not in use yet
 
-    const siteBucket = new s3.Bucket(this, name, {});
+    const siteBucket = new s3.Bucket(this, name, props.bucketProps);
     const siteOAI = new OriginAccessIdentity(this, `${name}OAI`);
     const distribution = new CloudFrontWebDistribution(this, `${name}Dist`, {
       priceClass: PriceClass.PRICE_CLASS_ALL,
