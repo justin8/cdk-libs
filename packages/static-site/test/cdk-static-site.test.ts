@@ -49,7 +49,10 @@ test("Distribution config is correct", () => {
         Origins: [
           {
             DomainName: {
-              "Fn::GetAtt": ["MyTestConstruct0062AECC", "RegionalDomainName"]
+              "Fn::GetAtt": [
+                "MyTestConstructbucketAC9E5A87",
+                "RegionalDomainName"
+              ]
             }
           }
         ]
