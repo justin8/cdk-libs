@@ -4,8 +4,7 @@ import s3deploy = require("@aws-cdk/aws-s3-deployment");
 import {
   OriginAccessIdentity,
   CloudFrontWebDistribution,
-  PriceClass,
-  ViewerCertificate
+  PriceClass
 } from "@aws-cdk/aws-cloudfront";
 import acm = require("@aws-cdk/aws-certificatemanager");
 import { PolicyStatement } from "@aws-cdk/aws-iam";
@@ -16,7 +15,6 @@ export interface StaticSiteProps {
     path: string;
   };
   bucketProps?: {};
-  certificate?: acm.ICertificate;
 }
 
 export class StaticSite extends Construct {
@@ -30,9 +28,8 @@ export class StaticSite extends Construct {
     this.bucket = new s3.Bucket(this, "bucket", props.bucketProps);
     const siteOAI = new OriginAccessIdentity(this, "OAI");
 
-    let distributionProps = {
+    this.distribution = new CloudFrontWebDistribution(this, "Distribution", {
       priceClass: PriceClass.PRICE_CLASS_ALL,
-      viewerCertificate: ViewerCertificate.fromCloudFrontDefaultCertificate(),
       originConfigs: [
         {
           s3OriginSource: {
@@ -42,19 +39,7 @@ export class StaticSite extends Construct {
           behaviors: [{ isDefaultBehavior: true }]
         }
       ]
-    };
-
-    if (props.certificate) {
-      distributionProps.viewerCertificate = ViewerCertificate.fromAcmCertificate(
-        props.certificate
-      );
-    }
-
-    this.distribution = new CloudFrontWebDistribution(
-      this,
-      "Distribution",
-      distributionProps
-    );
+    });
 
     const cloudfrontBucketPolicy = new PolicyStatement();
     cloudfrontBucketPolicy.addActions("s3:GetObject");
