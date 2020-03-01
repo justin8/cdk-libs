@@ -38,7 +38,9 @@ export class StaticSite extends Construct {
         domainName: props.domainName
       });
 
-      viewerCertificate = ViewerCertificate.fromAcmCertificate(certificate);
+      viewerCertificate = ViewerCertificate.fromAcmCertificate(certificate, {
+        aliases: [props.domainName]
+      });
     }
 
     let distributionProps: CloudFrontWebDistributionProps = {
