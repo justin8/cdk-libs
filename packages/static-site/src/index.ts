@@ -27,8 +27,6 @@ export class StaticSite extends Construct {
 
   constructor(parent: Construct, name: string, props: StaticSiteProps) {
     super(parent, name);
-    console.log(`Static site ${name} properties:`);
-    console.log(props);
 
     this.bucket = new s3.Bucket(this, "bucket", props.bucketProps);
     const siteOAI = new OriginAccessIdentity(this, "OAI");
