@@ -17,7 +17,7 @@ export interface StaticSiteProps {
   source?: {
     path: string;
   };
-  bucketProps?: {};
+  bucketProps?: s3.BucketProps;
   domainName?: string;
 }
 
