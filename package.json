@@ -8,6 +8,8 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "publish": "lerna run build && lerna publish"
+    "publish": "lerna run build && lerna publish",
+    "install": "lerna exec npm install",
+    "test": "lerna run test"
   }
 }
