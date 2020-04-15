@@ -1,15 +1,15 @@
 import { IFilterPattern, LogGroup, MetricFilter } from "@aws-cdk/aws-logs";
-import { Construct, Duration } from "@aws-cdk/core";
+import { Construct, Duration, StackProps } from "@aws-cdk/core";
 import { SnsAction } from "@aws-cdk/aws-cloudwatch-actions";
 import { ITopic } from "@aws-cdk/aws-sns";
 import {
   Alarm,
   ComparisonOperator,
   TreatMissingData,
-  Metric
+  Metric,
 } from "@aws-cdk/aws-cloudwatch";
 
-export interface LogGroupProps {
+export interface LogGroupProps extends StackProps {
   logGroupName: string;
   filterPattern: IFilterPattern;
   noLogsAlarm: AlarmProps;
@@ -36,7 +36,7 @@ export class LogGroupWrapper extends Construct {
     const noLogsAlarm = props.noLogsAlarm;
 
     const logGroup = new LogGroup(this, `${name}LogGroup`, {
-      logGroupName: props.logGroupName
+      logGroupName: props.logGroupName,
     });
 
     new MetricFilter(this, `${name}Errors`, {
@@ -44,7 +44,7 @@ export class LogGroupWrapper extends Construct {
       logGroup: logGroup,
       metricValue: "1",
       metricName: errorMetricName,
-      metricNamespace: metricNamespace
+      metricNamespace: metricNamespace,
     });
 
     // Alarms
@@ -61,8 +61,8 @@ export class LogGroupWrapper extends Construct {
           metric: new Metric({
             metricName: errorMetricName,
             namespace: metricNamespace,
-            period: errorsAlarm.metricPeriod!
-          })
+            period: errorsAlarm.metricPeriod!,
+          }),
         })
       );
     }
@@ -81,8 +81,8 @@ export class LogGroupWrapper extends Construct {
             metricName: "IncomingLogEvents",
             namespace: "AWS/Logs",
             period: noLogsAlarm.metricPeriod!,
-            dimensions: { LogGroupName: logGroup.logGroupName }
-          })
+            dimensions: { LogGroupName: logGroup.logGroupName },
+          }),
         })
       );
     }

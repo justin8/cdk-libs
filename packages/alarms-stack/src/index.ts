@@ -1,7 +1,7 @@
 import cdk = require("@aws-cdk/core");
 import { Topic, Subscription, SubscriptionProtocol } from "@aws-cdk/aws-sns";
 
-export interface alarmsStackProps {
+export interface alarmsStackProps extends cdk.StackProps {
   alarmEmails: Array<string>;
   alarmsTopicName: string;
 }
@@ -13,14 +13,14 @@ export class alarmsStack extends cdk.Stack {
     super(scope, id);
 
     this.alarmsTopic = new Topic(this, "alarmsTopic", {
-      topicName: "alarmsTopic"
+      topicName: "alarmsTopic",
     });
 
     for (let email of props.alarmEmails) {
       new Subscription(this, email, {
         protocol: SubscriptionProtocol.EMAIL,
         topic: this.alarmsTopic,
-        endpoint: email
+        endpoint: email,
       });
     }
   }
