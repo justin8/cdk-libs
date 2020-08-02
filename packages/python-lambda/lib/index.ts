@@ -19,8 +19,10 @@ export interface PythonFunctionProps extends Omit<FunctionProps, "code"> {
    * code as inline text.
    *
    * Only Asset based code is supported for the PythonFunction class
+   *
+   * @default - "src/${name}"
    */
-  readonly code: AssetCode;
+  readonly code?: AssetCode;
 
   /**
    * The directory to store temporary builds of the modules from your requirements.txt
@@ -34,6 +36,7 @@ export class PythonFunction extends Function {
   public requirementsLayer: LayerVersion;
 
   constructor(parent: Construct, name: string, props: PythonFunctionProps) {
+    const code = props.code || Code.fromAsset(`src/${name}`);
     const buildDir = props.buildDir || `build/${name}`;
 
     if (props.runtime.family != RuntimeFamily.PYTHON) {
@@ -50,7 +53,7 @@ export class PythonFunction extends Function {
 
     execSync(
       `docker run --rm` +
-        ` --volume "$PWD/${props.code.path}:/src"` +
+        ` --volume "$PWD/${code.path}:/src"` +
         ` --volume "$PWD/${buildDir}:/build"` +
         ` --workdir "/src"` +
         ` ${props.runtime.bundlingDockerImage.image}` +
@@ -64,6 +67,7 @@ export class PythonFunction extends Function {
 
     const lambdaProps = {
       ...props,
+      code,
       layers: [...(props.layers || []), requirementsLayer],
     };
 
