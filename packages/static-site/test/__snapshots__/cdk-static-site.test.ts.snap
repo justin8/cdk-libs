@@ -42,6 +42,8 @@ Object {
           "IPV6Enabled": true,
           "Origins": Array [
             Object {
+              "ConnectionAttempts": 3,
+              "ConnectionTimeout": 10,
               "DomainName": Object {
                 "Fn::GetAtt": Array [
                   "MyTestConstructbucketAC9E5A87",
