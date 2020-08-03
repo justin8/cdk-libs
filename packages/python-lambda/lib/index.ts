@@ -10,7 +10,6 @@ import {
 } from "@aws-cdk/aws-lambda";
 import { existsSync, mkdirSync } from "fs";
 import { execSync } from "child_process";
-import { checkServerIdentity } from "tls";
 
 export interface PythonFunctionProps extends Omit<FunctionProps, "code"> {
   /**
@@ -43,12 +42,8 @@ export class PythonFunction extends Function {
       throw new TypeError("Only Python language families are supported");
     }
 
-    if (!existsSync("build")) {
-      mkdirSync("build");
-    }
-
     if (!existsSync(buildDir)) {
-      mkdirSync(buildDir);
+      mkdirSync(buildDir, { recursive: true });
     }
 
     execSync(
