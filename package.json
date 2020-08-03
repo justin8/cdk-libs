@@ -9,7 +9,7 @@
   },
   "scripts": {
     "publish": "lerna run build && lerna publish",
-    "install": "lerna exec npm install",
+    "install": "lerna exec yarn install",
     "test": "lerna run test"
   }
 }
