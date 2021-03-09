@@ -1,6 +1,6 @@
 {
   "name": "@justin8-cdk/logwrapper",
-  "version": "1.2.7",
+  "version": "1.3.0",
   "description": "This module wraps basic settings for a CloudWatch log group; such as alarming on no logs or error messages in logs, along with subscribing to SNS topics for alarming",
   "author": "Justin Dray <justin@dray.be>",
   "homepage": "https://github.com/justin8/cdk-libs#readme",
