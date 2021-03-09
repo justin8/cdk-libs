@@ -33,19 +33,19 @@
     "rebuild": "npm run clean && npm install && npm run build"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.56.0",
-    "@types/jest": "^26.0.8",
-    "@types/node": "14.0.27",
-    "jest": "^26.2.2",
-    "ts-jest": "^26.1.4",
-    "typescript": "~3.9.7"
+    "@aws-cdk/assert": "^1.92.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "14.14.32",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.3",
+    "typescript": "~4.2.3"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "^1.56.0"
+    "@aws-cdk/core": "^1.92.0"
   },
   "dependencies": {
-    "@aws-cdk/aws-sns": "^1.56.0",
-    "@aws-cdk/core": "^1.56.0"
+    "@aws-cdk/aws-sns": "^1.92.0",
+    "@aws-cdk/core": "^1.92.0"
   },
   "gitHead": "385225e0e6c067aac4b4a8042f76a53d5c05926a"
 }
